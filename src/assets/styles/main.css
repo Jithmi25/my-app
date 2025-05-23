@@ -1,0 +1,134 @@
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Variables */
+:root {
+  --dark-blue: #0a192f;
+  --medium-blue: #112240;
+  --light-blue: #233554;
+  --accent-blue: #64ffda;
+  --text-primary: #e6f1ff;
+  --text-secondary: #8892b0;
+}
+
+/* Base Styles */
+body {
+  @apply bg-dark-blue text-text-primary font-sans antialiased;
+  font-family: "Calibre", "Inter", "San Francisco", sans-serif;
+}
+
+/* Header Styles */
+header {
+  @apply fixed w-full z-50 transition-all duration-300;
+}
+
+header.scrolled {
+  @apply bg-[#0a192fdd] backdrop-blur-sm py-2 shadow-lg;
+}
+
+.nav-menu {
+  @apply hidden md:flex space-x-8;
+}
+
+.nav-link {
+  @apply cursor-pointer capitalize transition-colors duration-300 hover:text-accent-blue;
+}
+
+.nav-link.active {
+  @apply text-accent-blue;
+}
+
+/* Section Styles */
+.section {
+  @apply min-h-screen py-20 px-6;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-12 relative;
+}
+
+.section-title::after {
+  @apply absolute bottom-[-10px] left-0 w-[70px] h-[3px] bg-accent-blue;
+  content: "";
+}
+
+/* Skill Icons Fix */
+.skill-icon {
+  @apply text-3xl mb-2; /* Reduced from text-4xl */
+}
+
+.skill-card {
+  @apply flex flex-col items-center p-4 bg-light-blue rounded-lg transition-all duration-300 hover:shadow-lg;
+  min-height: 120px;
+}
+
+/* Button Styles */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded font-medium transition-all duration-300;
+}
+
+.btn-filled {
+  @apply bg-accent-blue text-dark-blue hover:bg-opacity-90;
+}
+
+.btn-outline {
+  @apply border border-accent-blue text-accent-blue hover:bg-accent-blue hover:bg-opacity-10;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    @apply text-3xl;
+  }
+
+  .skill-grid {
+    @apply grid-cols-2;
+  }
+}

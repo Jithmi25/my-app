@@ -1,20 +1,18 @@
 import React from 'react';
 
 const Profile = () => {
-  // Using a placeholder image URL temporarily
   const profileImage = 'https://via.placeholder.com/400x400.png?text=Your+Photo';
   
   return (
-    <section id="profile" className="min-h-screen flex items-center justify-center py-20 fade-in">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
+    <section id="profile" className="section">
+      <div className="container flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-10 md:mb-0 flex justify-center">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent-blue shadow-lg float">
+          <div className="profile-image-container">
             <img 
               src={profileImage} 
               alt="Profile" 
-              className="w-full h-full object-cover"
+              className="profile-image"
             />
-            <div className="absolute inset-0 bg-accent-blue opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
           </div>
         </div>
         

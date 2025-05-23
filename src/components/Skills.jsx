@@ -11,7 +11,6 @@ import {
 } from 'react-icons/si';
 
 const Skills = () => {
-  // Group skills by category
   const skills = {
     'Frontend': [
       { name: 'React', icon: <FaReact />, color: 'text-[#61DAFB]' },
@@ -58,24 +57,21 @@ const Skills = () => {
     ]
   };
 
-  return (
-    <section id="skills" className="py-20 fade-in bg-medium-blue">
-      <div className="container mx-auto px-6">
+ return (
+    <section id="skills" className="section bg-medium-blue fade-in">
+      <div className="container">
         <h2 className="section-title">Skills & Technologies</h2>
         <p className="text-xl text-text-secondary mb-12 max-w-3xl">
-          Here are the technologies and tools I work with. I'm always learning and adding new skills to my toolkit.
+          Here are the technologies and tools I work with.
         </p>
 
         {Object.entries(skills).map(([category, items]) => (
           <div key={category} className="mb-12 slide-up">
             <h3 className="text-2xl font-bold mb-6 text-accent-blue">{category}</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="skills-grid">
               {items.map((skill) => (
-                <div 
-                  key={skill.name} 
-                  className="flex flex-col items-center p-4 bg-light-blue rounded-lg transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
-                >
-                  <div className={`text-4xl mb-2 ${skill.color}`}>
+                <div key={skill.name} className="skill-card">
+                  <div className={`skill-icon ${skill.color}`}>
                     {skill.icon}
                   </div>
                   <span className="text-sm font-medium text-center">{skill.name}</span>
