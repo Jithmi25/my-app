@@ -13,68 +13,71 @@ import {
 const Skills = () => {
   const skills = {
     'Frontend': [
-      { name: 'React', icon: <FaReact />, color: 'text-[#61DAFB]' },
-      { name: 'Next.js', icon: <SiNextdotjs />, color: 'text-[#000000]' },
-      { name: 'JavaScript', icon: <FaJs />, color: 'text-[#F7DF1E]' },
-      { name: 'TypeScript', icon: <SiTypescript />, color: 'text-[#3178C6]' },
-      { name: 'Redux', icon: <SiRedux />, color: 'text-[#764ABC]' },
-      { name: 'HTML5', icon: <FaHtml5 />, color: 'text-[#E34F26]' },
-      { name: 'CSS3', icon: <FaCss3Alt />, color: 'text-[#1572B6]' },
-      { name: 'Tailwind', icon: <SiTailwindcss />, color: 'text-[#06B6D4]' },
-      { name: 'Sass', icon: <SiSass />, color: 'text-[#CC6699]' },
-      { name: 'Bootstrap', icon: <SiBootstrap />, color: 'text-[#7952B3]' },
+      { name: 'React', icon: <FaReact />, color: '#61DAFB' },
+      { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000' },
+      { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
+      { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
+      { name: 'Redux', icon: <SiRedux />, color: '#764ABC' },
+      { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
+      { name: 'CSS3', icon: <FaCss3Alt />, color: '#1572B6' },
+      { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
+      { name: 'Sass', icon: <SiSass />, color: '#CC6699' },
+      { name: 'Bootstrap', icon: <SiBootstrap />, color: '#7952B3' },
     ],
     'Backend': [
-      { name: 'Node.js', icon: <FaNodeJs />, color: 'text-[#339933]' },
-      { name: 'Express', icon: <SiExpress />, color: 'text-[#000000]' },
-      { name: 'Python', icon: <FaPython />, color: 'text-[#3776AB]' },
-      { name: 'Django', icon: <SiDjango />, color: 'text-[#092E20]' },
-      { name: 'Flask', icon: <SiFlask />, color: 'text-[#000000]' },
-      { name: 'Java', icon: <FaJava />, color: 'text-[#007396]' },
-      { name: 'Spring', icon: <SiSpring />, color: 'text-[#6DB33F]' },
-      { name: 'GraphQL', icon: <SiGraphql />, color: 'text-[#E10098]' },
+      { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
+      { name: 'Express', icon: <SiExpress />, color: '#000000' },
+      { name: 'Python', icon: <FaPython />, color: '#3776AB' },
+      { name: 'Django', icon: <SiDjango />, color: '#092E20' },
+      { name: 'Flask', icon: <SiFlask />, color: '#000000' },
+      { name: 'Java', icon: <FaJava />, color: '#007396' },
+      { name: 'Spring', icon: <SiSpring />, color: '#6DB33F' },
+      { name: 'GraphQL', icon: <SiGraphql />, color: '#E10098' },
     ],
     'Databases': [
-      { name: 'MongoDB', icon: <SiMongodb />, color: 'text-[#47A248]' },
-      { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-[#4169E1]' },
-      { name: 'MySQL', icon: <SiMysql />, color: 'text-[#4479A1]' },
-      { name: 'Firebase', icon: <SiFirebase />, color: 'text-[#FFCA28]' },
-      { name: 'Redis', icon: <SiRedis />, color: 'text-[#DC382D]' },
+      { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
+      { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#4169E1' },
+      { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' },
+      { name: 'Firebase', icon: <SiFirebase />, color: '#FFCA28' },
+      { name: 'Redis', icon: <SiRedis />, color: '#DC382D' },
     ],
     'DevOps & Tools': [
-      { name: 'Git', icon: <FaGitAlt />, color: 'text-[#F05032]' },
-      { name: 'GitHub', icon: <FaGithub />, color: 'text-[#181717]' },
-      { name: 'Docker', icon: <FaDocker />, color: 'text-[#2496ED]' },
-      { name: 'Kubernetes', icon: <SiKubernetes />, color: 'text-[#326CE5]' },
-      { name: 'AWS', icon: <FaAws />, color: 'text-[#232F3E]' },
-      { name: 'Terraform', icon: <SiTerraform />, color: 'text-[#7B42BC]' },
-      { name: 'Nginx', icon: <SiNginx />, color: 'text-[#009639]' },
-      { name: 'Jenkins', icon: <SiJenkins />, color: 'text-[#D24939]' },
+      { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
+      { name: 'GitHub', icon: <FaGithub />, color: '#181717' },
+      { name: 'Docker', icon: <FaDocker />, color: '#2496ED' },
+      { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326CE5' },
+      { name: 'AWS', icon: <FaAws />, color: '#232F3E' },
+      { name: 'Terraform', icon: <SiTerraform />, color: '#7B42BC' },
+      { name: 'Nginx', icon: <SiNginx />, color: '#009639' },
+      { name: 'Jenkins', icon: <SiJenkins />, color: '#D24939' },
     ],
     'Testing': [
-      { name: 'Jest', icon: <SiJest />, color: 'text-[#C21325]' },
-      { name: 'Cypress', icon: <SiCypress />, color: 'text-[#17202C]' },
+      { name: 'Jest', icon: <SiJest />, color: '#C21325' },
+      { name: 'Cypress', icon: <SiCypress />, color: '#17202C' },
     ]
   };
 
- return (
-    <section id="skills" className="section bg-medium-blue fade-in">
+  return (
+    <section id="skills" className="section fade-in">
       <div className="container">
         <h2 className="section-title">Skills & Technologies</h2>
-        <p className="text-xl text-text-secondary mb-12 max-w-3xl">
-          Here are the technologies and tools I work with.
+        <p className="skills-intro">
+          Here are the technologies and tools I work with
         </p>
 
         {Object.entries(skills).map(([category, items]) => (
-          <div key={category} className="mb-12 slide-up">
-            <h3 className="text-2xl font-bold mb-6 text-accent-blue">{category}</h3>
+          <div key={category} className="skills-category slide-up">
+            <h3 className="skills-category-title">{category}</h3>
             <div className="skills-grid">
               {items.map((skill) => (
                 <div key={skill.name} className="skill-card">
-                  <div className={`skill-icon ${skill.color}`}>
+                  <div 
+                    className="skill-icon" 
+                    style={{ color: skill.color }}
+                  >
                     {skill.icon}
                   </div>
-                  <span className="text-sm font-medium text-center">{skill.name}</span>
+                  <span className="skill-name">{skill.name}</span>
                 </div>
               ))}
             </div>

@@ -5,42 +5,43 @@ const Profile = () => {
   
   return (
     <section id="profile" className="section">
-      <div className="container flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-10 md:mb-0 flex justify-center">
-          <div className="profile-image-container">
-            <img 
-              src={profileImage} 
-              alt="Profile" 
-              className="profile-image"
-            />
+      <div className="container">
+        <div className="profile-container">
+          <div className="profile-image-wrapper">
+            <div className="profile-image-container">
+              <img 
+                src={profileImage} 
+                alt="Profile" 
+                className="profile-image"
+              />
+            </div>
           </div>
-        </div>
-        
-        <div className="md:w-1/2 md:pl-12 slide-up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Hi, I'm <span className="text-accent-blue">Your Name</span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-text-secondary">
-            Your Profession
-          </h2>
-          <p className="text-lg mb-8 text-text-secondary">
-            A passionate professional with expertise in your field. Dedicated to creating 
-            innovative solutions and delivering exceptional results.
-          </p>
-          <div className="flex flex-wrap">
-            <a 
-              href="/path-to-your-cv.pdf" 
-              download 
-              className="btn btn-filled pulse"
-            >
-              Download CV
-            </a>
-            <a 
-              href="#contact" 
-              className="btn btn-outline pulse"
-            >
-              Contact Me
-            </a>
+          
+          <div className="profile-content">
+            <h1 className="profile-title">
+              Hi, I'm <span>Jithmi Wickramasinghe</span>
+            </h1>
+            <h2 className="profile-subtitle">
+              Backend Developer
+            </h2>
+            <p className="profile-description">
+              I am a passionate tech learner, currently exploring backend development and software systems. I enjoy engaging in tech events, public speaking, and working with others to build practical solutions. I'm always curious and eager to expand my knowledge and skills.
+            </p>
+            <div className="profile-buttons">
+              <a 
+                href="/path-to-your-cv.pdf" 
+                download 
+                className="btn btn-filled pulse"
+              >
+                Download CV
+              </a>
+              <a 
+                href="#contact" 
+                className="btn btn-outline pulse"
+              >
+                Contact Me
+              </a>
+            </div>
           </div>
         </div>
       </div>

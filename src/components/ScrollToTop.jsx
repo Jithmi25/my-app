@@ -25,14 +25,15 @@ const ScrollToTop = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="scroll-to-top-container">
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-accent-blue text-dark-blue p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none bounce"
+          className="scroll-to-top-button"
           aria-label="Scroll to top"
         >
-          <FaArrowUp size={20} />
+          <FaArrowUp className="scroll-to-top-icon" />
+          <span className="scroll-to-top-tooltip">Back to Top</span>
         </button>
       )}
     </div>

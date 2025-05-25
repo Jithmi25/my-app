@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Header = ({ activeSection, setActiveSection }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,21 +23,44 @@ const Header = ({ activeSection, setActiveSection }) => {
           <span>{'/>'}</span>
         </div>
         
-        <ul className="nav-menu">
-          {['profile', 'skills', 'achievements', 'projects', 'contact'].map((item) => (
-            <li key={item}>
-              <Link
-                to={item}
-                smooth={true}
-                duration={500}
-                className={`nav-link ${activeSection === item ? 'active' : 'text-text-secondary'}`}
-                onClick={() => setActiveSection(item)}
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="nav-content">
+          <ul className="nav-menu">
+            {['profile', 'skills', 'achievements', 'projects', 'contact'].map((item) => (
+              <li key={item}>
+                <Link
+                  to={item}
+                  smooth={true}
+                  duration={500}
+                  className={`nav-link ${activeSection === item ? 'active' : 'text-text-secondary'}`}
+                  onClick={() => setActiveSection(item)}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          
+          <div className="social-icons">
+            <a 
+              href="https://github.com/Jithmi25" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-icon"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/jithmi-wickramasinghe" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-icon"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
         
         <button className="md:hidden text-text-primary focus:outline-none">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
