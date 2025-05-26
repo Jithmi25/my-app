@@ -1,26 +1,32 @@
 import React, { useState } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+
+// Import your achievement images
+import achievement1 from '../assets/images/achievements/achievements1.jpeg';
+import achievement2 from '../assets/images/achievements/achievements2.jpeg';
+import achievement3 from '../assets/images/achievements/achievements3.jpeg';
 
 const achievements = [
   {
     id: 1,
-    title: 'Certification Name',
-    description: 'Description of the certification or achievement',
+    title: 'AWS Certified Developer',
+    description: 'Earned AWS Certified Developer - Associate certification demonstrating cloud application development skills',
     year: '2023',
-    image: 'https://via.placeholder.com/800x600.png?text=Achievement+1'
+    image: achievement1
   },
   {
     id: 2,
-    title: 'Award Name',
-    description: 'Description of the award or recognition',
+    title: 'Best Project Award',
+    description: 'Received university award for best capstone project in software engineering',
     year: '2022',
-    image: 'https://via.placeholder.com/800x600.png?text=Achievement+2'
+    image: achievement2
   },
   {
     id: 3,
-    title: 'Project Completion',
-    description: 'Description of the completed project',
+    title: 'Hackathon Winner',
+    description: 'First place in regional coding competition with innovative healthcare solution',
     year: '2021',
-    image: 'https://via.placeholder.com/800x600.png?text=Achievement+3'
+    image: achievement3
   },
 ];
 
@@ -45,55 +51,59 @@ const Achievements = () => {
         <h2 className="section-title">Achievements</h2>
         
         <div className="achievements-slider">
-          <div 
-            className="slider-container"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {achievements.map((achievement) => (
-              <div key={achievement.id} className="achievement-slide">
-                <div className="h-64 overflow-hidden bg-gray-200 flex items-center justify-center">
+          <div className="slider-wrapper">
+            {achievements.map((achievement, index) => (
+              <div 
+                key={achievement.id}
+                className={`achievement-slide ${index === currentSlide ? 'active' : ''}`}
+              >
+              
+                <div className="achievement-image-container">
                   <img 
                     src={achievement.image} 
                     alt={achievement.title}
                     className="achievement-image"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-xl font-bold">{achievement.title}</h3>
+                <div className="achievement-content">
+                  <div className="achievement-header">
+                    <h3 className="achievement-title">{achievement.title}</h3>
                     <span className="achievement-year">{achievement.year}</span>
                   </div>
-                  <p className="text-text-secondary">{achievement.description}</p>
+                  <p className="achievement-description">{achievement.description}</p>
                 </div>
               </div>
             ))}
           </div>
           
-          <div className="slider-nav">
-            {achievements.map((_, index) => (
-              <button
-                key={index}
-                className={`slider-dot ${currentSlide === index ? 'active' : ''}`}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+          <div className="slider-controls">
+            <button 
+              className="slider-arrow slider-arrow-left"
+              onClick={prevSlide}
+              aria-label="Previous achievement"
+            >
+              <FaChevronLeft />
+            </button>
+            
+            <div className="slider-dots">
+              {achievements.map((_, index) => (
+                <button
+                  key={index}
+                  className={`slider-dot ${currentSlide === index ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Go to achievement ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            <button 
+              className="slider-arrow slider-arrow-right"
+              onClick={nextSlide}
+              aria-label="Next achievement"
+            >
+              <FaChevronRight />
+            </button>
           </div>
-          
-          <button 
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-accent-blue text-dark-blue p-2 rounded-full"
-            onClick={prevSlide}
-            aria-label="Previous slide"
-          >
-            &lt;
-          </button>
-          <button 
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-accent-blue text-dark-blue p-2 rounded-full"
-            onClick={nextSlide}
-            aria-label="Next slide"
-          >
-            &gt;
-          </button>
         </div>
       </div>
     </section>

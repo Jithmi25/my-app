@@ -441,27 +441,173 @@ header.scrolled {
 }
 
 /* Achivement Section  */
-.achievement-card {
-  background-color: var(--medium-blue);
-  border-radius: 8px;
-  padding: 2rem;
-  margin-bottom: 2rem;
+.achievements-slider {
   position: relative;
-  transition: all 0.3s ease;
-  border-left: 3px solid var(--accent-blue);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.achievement-card:hover {
-  transform: translateX(10px);
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%; /* Added for proper slide height */
+}
+
+.achievement-slide {
+  min-width: 100%;
+  padding: 0 1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute; /* Added for proper stacking */
+  top: 0;
+  left: 0;
+}
+
+.achievement-slide.active {
+  opacity: 1;
+  position: relative; /* Added to bring active slide to front */
+}
+
+/* Missing image container styles */
+.achievement-image-container {
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px -15px var(--shadow-dark);
+  background-color: var(--light-blue); /* Fallback if image doesn't load */
+}
+
+/* Enhanced image styles */
+.achievement-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block; /* Remove extra space under image */
+}
+
+.achievement-slide:hover .achievement-image {
+  transform: scale(1.02);
+}
+
+/* Missing content container styles */
+.achievement-content {
+  background-color: var(--medium-blue);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-blue);
+  transition: all 0.3s ease;
+  margin-top: -20px; /* Overlap with image container */
+  position: relative;
+  z-index: 2;
+}
+
+.achievement-slide:hover .achievement-content {
+  transform: translateY(-5px);
   box-shadow: 0 10px 30px -15px var(--shadow-dark);
 }
 
+/* Header styles */
+.achievement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap; /* Added for responsive layout */
+}
+
+.achievement-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-right: 1rem; /* Added spacing */
+  margin-bottom: 0.5rem; /* Added for responsive */
+}
+
 .achievement-year {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
   font-size: 0.9rem;
   color: var(--accent-blue);
+  background-color: var(--dark-blue);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  white-space: nowrap; /* Prevent year from breaking */
+}
+
+.achievement-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 0.5rem; /* Added spacing */
+}
+
+/* Slider controls */
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+  position: relative; /* For absolute positioning of arrows */
+}
+
+/* Missing arrow button styles */
+.slider-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--accent-blue);
+  color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute; /* For side positioning */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.slider-arrow-left {
+  left: -50px; /* Position left arrow */
+}
+
+.slider-arrow-right {
+  right: -50px; /* Position right arrow */
+}
+
+.slider-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+}
+
+/* Dot navigation */
+.slider-dots {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0; /* Remove default button padding */
+}
+
+.slider-dot.active {
+  background-color: var(--accent-blue);
+  transform: scale(1.2);
 }
 
 /* Contact Section  */
@@ -841,5 +987,58 @@ header.scrolled {
 
   .scroll-to-top-tooltip {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .slider-arrow-left {
+    left: 10px;
+  }
+
+  .slider-arrow-right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievement-image-container {
+    height: 300px;
+  }
+
+  .achievement-title {
+    font-size: 1.3rem;
+  }
+
+  .slider-controls {
+    margin-top: 1.5rem;
+  }
+
+  .slider-arrow {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievement-image-container {
+    height: 250px;
+  }
+
+  .achievement-content {
+    padding: 1rem;
+    margin-top: -10px;
+  }
+
+  .achievement-title {
+    font-size: 1.2rem;
+  }
+
+  .achievement-description {
+    font-size: 0.9rem;
+  }
+
+  .slider-dot {
+    width: 10px;
+    height: 10px;
   }
 }
