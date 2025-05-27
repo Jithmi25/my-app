@@ -4,75 +4,99 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Project One',
-      description: 'A brief description of the project and technologies used.',
-      image: 'https://via.placeholder.com/800x600.png?text=Project+1',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      githubUrl: '#',
-      liveUrl: '#'
+      title: 'E-Commerce Platform',
+      description: 'A full-featured online store with shopping cart, user authentication, and payment processing.',
+      image: '/assets/images/projects/project1.jpeg',
+      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      githubUrl: 'https://github.com/yourusername/ecommerce-platform',
+      liveUrl: 'https://yourecommerceapp.com'
     },
     {
       id: 2,
-      title: 'Project Two',
-      description: 'A brief description of the project and technologies used.',
-      image: 'https://via.placeholder.com/800x600.png?text=Project+2',
-      tags: ['Python', 'Django', 'PostgreSQL'],
-      githubUrl: '#',
-      liveUrl: '#'
+      title: 'Task Management App',
+      description: 'A productivity application for organizing tasks with drag-and-drop functionality and team collaboration.',
+      image: '/assets/images/projects/project2.jpeg',
+      tags: ['React', 'Firebase', 'Material UI'],
+      githubUrl: 'https://github.com/yourusername/task-manager',
+      liveUrl: 'https://yourtaskapp.com'
     },
     {
       id: 3,
-      title: 'Project Three',
-      description: 'A brief description of the project and technologies used.',
-      image: 'https://via.placeholder.com/800x600.png?text=Project+3',
-      tags: ['JavaScript', 'Express', 'Firebase'],
-      githubUrl: '#',
-      liveUrl: '#'
+      title: 'Weather Dashboard',
+      description: 'Real-time weather forecasting application with location detection and 5-day forecasts.',
+      image: '/assets/images/projects/project3.jpeg',
+      tags: ['JavaScript', 'API Integration', 'CSS3'],
+      githubUrl: 'https://github.com/yourusername/weather-app',
+      liveUrl: 'https://yourweatherapp.com'
     },
+    {
+      id: 4,
+      title: 'Social Media Analytics',
+      description: 'Dashboard for tracking social media metrics and engagement across multiple platforms.',
+      image: '/assets/images/projects/project4.jpeg',
+      tags: ['Python', 'Django', 'PostgreSQL', 'Chart.js'],
+      githubUrl: 'https://github.com/yourusername/social-analytics',
+      liveUrl: 'https://yoursocialanalytics.com'
+    },
+    {
+      id: 5,
+      title: 'Recipe Finder',
+      description: 'Search engine for recipes with filtering by dietary restrictions and ingredient matching.',
+      image: '/assets/images/projects/project5.jpeg',
+      tags: ['Vue.js', 'Express', 'MySQL'],
+      githubUrl: 'https://github.com/yourusername/recipe-finder',
+      liveUrl: 'https://yourrecipeapp.com'
+    },
+    {
+      id: 6,
+      title: 'Portfolio Website',
+      description: 'A responsive personal portfolio website showcasing projects and skills.',
+      image: '/assets/images/projects/project6.jpeg',
+      tags: ['HTML5', 'CSS3', 'JavaScript'],
+      githubUrl: 'https://github.com/yourusername/portfolio',
+      liveUrl: 'https://yourportfolio.com'
+    }
   ];
 
   return (
-    <section id="projects" className="py-20 fade-in">
-      <div className="container mx-auto px-6">
-        <h2 className="section-title">Projects</h2>
-        <p className="text-xl text-text-secondary mb-12 max-w-3xl">
+    <section id="projects">
+      <div className="projects-container">
+        <h2 className="projects-title">Projects</h2>
+        <p className="projects-subtitle">
           Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="projects-grid">
           {projects.map((project) => (
-            <div 
-              key={project.id} 
-              className="bg-medium-blue rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-            >
-              <div className="h-48 overflow-hidden">
+            <div key={project.id} className="project-card">
+              <div className="project-image-container">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="project-image"
+                  onError={(e) => {
+                    e.target.src = `https://via.placeholder.com/800x600.png?text=${project.title.replace(/\s+/g, '+')}`;
+                  }}
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-text-secondary mb-4">{project.description}</p>
+              <div className="project-content">
+                <h3 className="project-name">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="project-tags">
                   {project.tags.map((tag, index) => (
-                    <span 
-                      key={index} 
-                      className="text-xs bg-light-blue text-accent-blue px-3 py-1 rounded-full"
-                    >
+                    <span key={index} className="project-tag">
                       {tag}
                     </span>
                   ))}
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="project-buttons">
                   <a 
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="btn btn-outline btn-sm"
+                    className="project-btn project-btn-outline"
                   >
                     GitHub
                   </a>
@@ -80,7 +104,7 @@ const Projects = () => {
                     href={project.liveUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="btn btn-filled btn-sm"
+                    className="project-btn project-btn-filled"
                   >
                     Live Demo
                   </a>
