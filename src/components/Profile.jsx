@@ -1,7 +1,7 @@
 import React from 'react';
-
+import profile from '../assets/images/profile/profile1.jpeg';
 const Profile = () => {
-  const profileImage = 'https://via.placeholder.com/400x400.png?text=Your+Photo';
+  const profileImage = profile;
   
   return (
     <section id="profile" className="section">

@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Import your achievement images
-import achievement1 from '../assets/images/achievements/achievements1.jpeg';
+import achievement1 from '../assets/images/achievements/achievements1.jpg';
 import achievement2 from '../assets/images/achievements/achievements2.jpeg';
 import achievement3 from '../assets/images/achievements/achievements3.jpeg';
 
 const achievements = [
   {
     id: 1,
-    title: 'AWS Certified Developer',
-    description: 'Earned AWS Certified Developer - Associate certification demonstrating cloud application development skills',
-    year: '2023',
+    title: 'Hackathon & Designathon',
+    description: '1st Runners-Up of SHECODERess <V6.0> The Inter-University Hackathon & Designathon',
+    year: '2025',
     image: achievement1
   },
   {
